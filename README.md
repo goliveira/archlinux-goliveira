@@ -63,3 +63,22 @@ We will get an error message corresponding to the files that we did not download
 archlinux-x86_64.iso: OK
 gpg: Good signature from "Pierre Schmitz <pierre@archlinux.org>" [unknown]
 ```
+
+## Prepare an installation medium
+
+### On Linux
+
+Find out the name of your USB drive with `lsblk`. Edit the variable `USBDRIVE` accordingly.
+
+Make sure that the drive is not mounted. Copy the ISO file to the USB drive using `dd`:
+
+```
+USBDRIVE="/dev/sdb"
+dd bs=4M if=archlinux-x86_64.iso of=$USBDRIVE conv=fsync oflag=direct status=progress
+```
+
+The above command has to be executed as superuser.
+
+### On Mac OS or Windows
+
+See instructions in <https://wiki.archlinux.org/title/USB_flash_installation_medium>.
