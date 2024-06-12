@@ -82,3 +82,15 @@ The above command has to be executed as superuser.
 ### On Mac OS or Windows
 
 See instructions in <https://wiki.archlinux.org/title/USB_flash_installation_medium>.
+
+## Verify the boot mode
+
+Boot the system with the USB drive where you wrote the ISO file.
+
+After booting the live environment, execute
+
+```
+cat /sys/firmware/efi/fw_platform_size
+```
+
+If the command returns `64`, then the system is booted in 64-bit x64 UEFI mode.
