@@ -94,3 +94,53 @@ cat /sys/firmware/efi/fw_platform_size
 ```
 
 If the command returns `64`, then the system is booted in 64-bit x64 UEFI mode.
+
+## Connect to the network
+
+Below, we describe how to connect to the network using `ip`, `iwctl` and `dhcpcd`.
+
+Check the network connection with `ip`:
+
+```
+ip addr
+```
+
+Turn on network device
+
+```
+ip link
+ip link set <device> up
+ip link show <device>
+```
+
+(Wireless) Connect to wi-fi with `iwctl`:
+
+```
+iwctl
+device list
+station <device> scan
+station <device> get-networks
+station <device> connect <network_name>
+station <device> show
+quit
+```
+
+Get a dynamic  IP address with `dhcpcd`:
+
+```
+dhcpcd <device>
+```
+
+Get a static IP address
+
+```
+dhcpcd -S ip_address=150.164.25.215/24 \
+	-S routers=150.164.25.254 \
+	-S domain_name_servers=8.8.8.8 <device>
+```
+
+Test the internet connection
+
+```
+ping -c 3 archlinux.org
+```
