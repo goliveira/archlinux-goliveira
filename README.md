@@ -144,3 +144,11 @@ Test the internet connection
 ```
 ping -c 3 archlinux.org
 ```
+
+## Update the system clock
+
+Check clock
+
+```
+timedatectl status
+```
