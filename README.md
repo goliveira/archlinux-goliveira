@@ -152,3 +152,36 @@ Check clock
 ```
 timedatectl status
 ```
+
+## Partition the disks
+
+List partitions
+
+```
+fdisk -l
+```
+
+EFI with GPT using gdisk
+
+```
+gdisk /dev/sda
+o
+n
++400M
+ef00
+n
+8300
+w
+```
+
+EFI with GPT using fdisk
+
+```
+fdisk /dev/sda
+g
+n
+t 1
+n
+t 20
+w
+```
