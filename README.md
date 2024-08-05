@@ -204,3 +204,12 @@ mount /dev/sda2 /mnt
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 ```
+
+## Select the mirrors (optional)
+
+Execute
+
+```
+COUNTRY="Brazil"
+reflector -c $COUNTRY -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+```
