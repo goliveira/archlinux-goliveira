@@ -213,3 +213,19 @@ Execute
 COUNTRY="Brazil"
 reflector -c $COUNTRY -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 ```
+
+## Install base system
+
+Execute
+
+```
+pacstrap -K /mnt base linux linux-firmware
+```
+
+### Packages
+
+```
+base
+linux
+linux-firmware
+```
