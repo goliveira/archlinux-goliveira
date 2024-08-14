@@ -229,3 +229,17 @@ base
 linux
 linux-firmware
 ```
+
+## Generate fstab
+
+Create
+
+```
+/etc/fstab
+```
+
+Add
+
+```
+genfstab -U /mnt >> /mnt/etc/fstab
+```
