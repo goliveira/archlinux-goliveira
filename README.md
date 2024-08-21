@@ -243,3 +243,11 @@ Add
 ```
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
+
+## Change root
+
+Change root into the new system
+
+```
+arch-chroot /mnt
+```
