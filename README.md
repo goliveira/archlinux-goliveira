@@ -251,3 +251,24 @@ Change root into the new system
 ```
 arch-chroot /mnt
 ```
+
+## Timezone
+
+Set the time zone by creating
+
+```
+/etc/localtime
+```
+
+Add
+
+```
+TIMEZONE="America/Sao_Paulo"
+ln -sf /usr/share/zoneinfo/$TIMEZONE /etc/localtime
+```
+
+Execute
+
+```
+hwclock --systohc
+```
