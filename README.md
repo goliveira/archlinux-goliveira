@@ -105,7 +105,7 @@ Check the network connection with `ip`:
 ip addr
 ```
 
-Turn on network device
+Turn on network device:
 
 ```
 ip link
@@ -131,7 +131,7 @@ Get a dynamic  IP address with `dhcpcd`:
 dhcpcd <device>
 ```
 
-Get a static IP address
+Get a static IP address:
 
 ```
 dhcpcd -S ip_address=150.164.25.215/24 \
@@ -139,7 +139,7 @@ dhcpcd -S ip_address=150.164.25.215/24 \
 	-S domain_name_servers=8.8.8.8 <device>
 ```
 
-Test the internet connection
+Test the internet connection:
 
 ```
 ping -c 3 archlinux.org
@@ -147,7 +147,7 @@ ping -c 3 archlinux.org
 
 ## Update the system clock
 
-Check clock
+Check clock:
 
 ```
 timedatectl status
@@ -155,13 +155,13 @@ timedatectl status
 
 ## Partition the disks
 
-List partitions
+List partitions:
 
 ```
 fdisk -l
 ```
 
-EFI with GPT using gdisk
+EFI with GPT using gdisk:
 
 ```
 gdisk /dev/sda
@@ -174,7 +174,7 @@ n
 w
 ```
 
-EFI with GPT using fdisk
+EFI with GPT using fdisk:
 
 ```
 fdisk /dev/sda
@@ -246,7 +246,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 ## Change root
 
-Change root into the new system
+Change root into the new system:
 
 ```
 arch-chroot /mnt
