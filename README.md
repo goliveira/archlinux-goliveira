@@ -299,3 +299,61 @@ Add
 ```
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 ```
+
+## Network configuration (part I)
+
+### Host name
+
+Edit
+
+```
+/etc/hostname
+```
+
+Add
+
+```
+MYHOSTNAME="myhostname"
+echo "$MYHOSTNAME" >> /etc/hostname
+```
+
+### Localhost resolution
+
+<https://wiki.archlinux.org/title/Network_configuration#localhost_is_resolved_over_the_network>
+
+Edit
+
+```
+/etc/hosts
+```
+
+Add
+
+```
+MYHOSTNAME="myhostname"
+echo "127.0.0.1    localhost" >> /etc/hosts
+echo "::1          localhost" >> /etc/hosts
+echo "127.0.1.1    $MYHOSTNAME" >> /etc/hosts
+```
+
+### DHCPD
+
+See [[dhcpcd]].
+
+Install DHCPD:
+
+```
+pacman -S dhcpcd
+```
+
+### Further configuration
+
+To manually connect to the network, see [[107-Network|1.7 - Connect to the network]].
+
+For a permanent solution, see [[504-Network|5.4 - Network configuration (part two)]].
+
+### Packages
+
+```
+dhcpcd
+```
