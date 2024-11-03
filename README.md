@@ -373,3 +373,69 @@ Set root password
 ```
 passwd
 ```
+
+## Boot loader and microcode
+
+Intel Microcode:
+
+```
+pacman -S intel-ucode
+```
+
+AMD Microcode:
+
+```
+pacman -S amd-ucode
+```
+
+GRUB:
+
+```
+pacman -S grub
+```
+
+(Optional) Dual boot:
+
+```
+pacman -S os-prober
+sed -i 's/^#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/' /etc/default/grub
+```
+
+EFI boot:
+
+```
+pacman -S efibootmgr
+```
+
+Install GRUB:
+
+```
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+```
+
+Non EFI boot:
+
+```
+grub-install --target=i386-pc /dev/sda
+```
+
+GRUB config by creating
+
+```
+/boot/grub/grub.cgf
+```
+
+with
+
+```
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+### Packages
+
+```
+intel-ucode    or    amd-ucode
+grub
+efibootmgr
+os-prober
+```
