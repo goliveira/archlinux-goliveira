@@ -365,3 +365,11 @@ Execute
 ```
 mkinitcpio -P
 ```
+
+## Root password
+
+Set root password
+
+```
+passwd
+```
