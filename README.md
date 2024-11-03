@@ -357,3 +357,11 @@ For a permanent solution, see [[504-Network|5.4 - Network configuration (part tw
 ```
 dhcpcd
 ```
+
+## Initramfs (optional)
+
+Execute
+
+```
+mkinitcpio -P
+```
