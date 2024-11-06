@@ -439,3 +439,26 @@ grub
 efibootmgr
 os-prober
 ```
+
+## Wireless (optional)
+
+See [[iwd]] and [[wpa]].
+
+Install `iwd`:
+
+```
+pacman -S iwd
+```
+
+Install WPA supplicant:
+
+```
+pacman -S wpa_supplicant
+```
+
+### Packages
+
+```
+iwd
+wpa_supplicant
+```
