@@ -462,3 +462,42 @@ pacman -S wpa_supplicant
 iwd
 wpa_supplicant
 ```
+
+## Reboot the system
+
+Exit chroot environment:
+
+```
+exit
+```
+
+Umount:
+
+```
+umount -R /mnt
+```
+
+Leave IP address:
+
+```
+dhcpcd -k <device>
+```
+
+Close wifi connection:
+
+```
+iwctl
+station <device> disconnect
+```
+
+Turn off device:
+
+```
+ip link set <device> down
+```
+
+Reboot:
+
+```
+poweroff
+```
