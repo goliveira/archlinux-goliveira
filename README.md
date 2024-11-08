@@ -350,7 +350,7 @@ pacman -S dhcpcd
 
 To manually connect to the network, see [[107-Network|1.7 - Connect to the network]].
 
-For a permanent solution, see [[504-Network|5.4 - Network configuration (part two)]].
+For a permanent solution, see [[504-Network|5.4 - Network configuration (part II)]].
 
 ### Packages
 
