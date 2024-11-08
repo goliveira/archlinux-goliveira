@@ -569,3 +569,45 @@ As root, set user password:
 ```
 passwd $NEWUSER
 ```
+
+## Privilege elevation
+
+<https://wiki.archlinux.org/title/Sudo>
+
+See [[sudo]].
+
+As root, install
+
+```
+pacman -S sudo
+```
+
+As root, edit
+
+```
+/etc/sudoers
+```
+
+with
+
+```
+EDITOR=nano visudo
+```
+
+and uncomment the line
+
+```
+%wheel ALL=(ALL:ALL) ALL
+```
+
+Alternatively, execute
+
+```
+sed -i 's/^#%wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
+```
+
+### Packages
+
+```
+sudo
+```
