@@ -551,3 +551,21 @@ wpa_supplicant
 ```
 
 7 config files
+
+## Create a new user
+
+<https://wiki.archlinux.org/index.php/Users_and_groups#User_management>
+
+As root, execute
+
+```
+NEWUSER="goliveir"
+useradd --defaults
+useradd -mG wheel $NEWUSER
+```
+
+As root, set user password:
+
+```
+passwd $NEWUSER
+```
