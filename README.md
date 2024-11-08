@@ -501,3 +501,53 @@ Reboot:
 ```
 poweroff
 ```
+
+## Packages and config files
+
+### Packages
+
+Base system
+```
+base
+linux
+linux-firmware
+```
+
+Microcode
+```
+intel-ucode    or    amd-ucode
+```
+
+Boot manager
+```
+grub
+efibootmgr
+os-prober
+```
+
+Network
+```
+dhcpcd
+```
+
+Wireless
+```
+iwd
+wpa_supplicant
+```
+
+10 packages
+
+### Config files
+
+```
+/etc/fstab
+/etc/localtime
+/etc/locale.gen
+/etc/locale.conf
+/etc/hostname
+/etc/hosts
+/boot/grub/grub.cgf
+```
+
+7 config files
