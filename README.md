@@ -222,14 +222,6 @@ Execute
 pacstrap -K /mnt base linux linux-firmware
 ```
 
-### Packages
-
-```
-base
-linux
-linux-firmware
-```
-
 ## Generate fstab
 
 Create
@@ -352,12 +344,6 @@ To manually connect to the network, see [[107-Network|1.7 - Connect to the netwo
 
 For a permanent solution, see [[504-Network|5.4 - Network configuration (part II)]].
 
-### Packages
-
-```
-dhcpcd
-```
-
 ## Initramfs (optional)
 
 Execute
@@ -431,15 +417,6 @@ with
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-### Packages
-
-```
-intel-ucode    or    amd-ucode
-grub
-efibootmgr
-os-prober
-```
-
 ## Wireless (optional)
 
 See [[iwd]] and [[wpa]].
@@ -454,13 +431,6 @@ Install WPA supplicant:
 
 ```
 pacman -S wpa_supplicant
-```
-
-### Packages
-
-```
-iwd
-wpa_supplicant
 ```
 
 ## Reboot the system
