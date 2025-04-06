@@ -9,7 +9,7 @@ The first step is downloading the ISO file:
 3. Download the file `archlinux-x86_64.iso`.
 4. (Optional) Download the files `archlinux-x86_64.iso.sig` and `b2sums.txt`.
 
-On Linux, we can download the files on the command line using `wget`. To install it run:
+On Linux, we can download the files on the command line using `wget`. To install it, run:
 
 On Arch Linux:
 
@@ -42,7 +42,7 @@ wget $MIRROR/b2sums.txt -O b2sums.txt
 
 ## Verify the ISO file (optional)
 
-This is step is optional (but recommended). We will verify if the ISO file is not damaged and was not modified. To do this, we will use `gpg` and `b2sum`. Both programs should already be installed on Linux because they are part of the core utilities. On Mac OS, you may need to install `b2sum` (`gpg` should be available). To install it run:
+This step is optional (but recommended). We will verify that the ISO file is not damaged and has not been modified. To do this, we will use `gpg` and `b2sum`. Both programs are typically pre-installed on Linux, as they are part of the core utilities. On macOS, `gpg` should be available by default, but you may need to install `b2sum`. To install it, run:
 
 On Mac OS:
 
@@ -161,7 +161,7 @@ List partitions:
 fdisk -l
 ```
 
-EFI with GPT using gdisk:
+Create a partition for EFI with GPT using gdisk:
 
 ```
 gdisk /dev/sda
@@ -174,7 +174,7 @@ n
 w
 ```
 
-EFI with GPT using fdisk:
+Alternatively, create a partition for EFI with GPT using fdisk:
 
 ```
 fdisk /dev/sda
@@ -330,19 +330,11 @@ echo "127.0.1.1    $MYHOSTNAME" >> /etc/hosts
 
 ### DHCPD
 
-See [[dhcpcd]].
-
 Install DHCPD:
 
 ```
 pacman -S dhcpcd
 ```
-
-### Further configuration
-
-To manually connect to the network, see [[107-Network|1.7 - Connect to the network]].
-
-For a permanent solution, see [[504-Network|5.4 - Network configuration (part II)]].
 
 ## Initramfs (optional)
 
@@ -418,8 +410,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ## Wireless (optional)
-
-See [[iwd]] and [[wpa]].
 
 Install `iwd`:
 
@@ -506,8 +496,6 @@ iwd
 wpa_supplicant
 ```
 
-10 packages
-
 ### Config files
 
 ```
@@ -519,8 +507,6 @@ wpa_supplicant
 /etc/hosts
 /boot/grub/grub.cgf
 ```
-
-7 config files
 
 ## Create a new user
 
@@ -543,8 +529,6 @@ passwd $NEWUSER
 ## Privilege elevation
 
 <https://wiki.archlinux.org/title/Sudo>
-
-See [[sudo]].
 
 As root, install
 
